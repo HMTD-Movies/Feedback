@@ -1,6 +1,6 @@
 import pyrogram
 from pyrogram import filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from bot import feedback
 from config import Config
 from translation import Translation
