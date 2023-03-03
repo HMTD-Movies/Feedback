@@ -8,7 +8,7 @@ from .commands import start
 
 @feedback.on_callback_query()
 async def cb_handler(c, m):
-  cb_data = m.data
+  cb_data = c.data
 
   if "feed" in cb_data:
       Config.feedback.append(m.from_user.id)
