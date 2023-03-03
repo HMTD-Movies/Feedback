@@ -35,7 +35,8 @@ async def cb_handler(c, m):
       await c.send_message(chat_id=m.message.chat.id, text=Translation.LOGIN)
        
   if "yes" in cb_data:
-      Config.feedback.remove(m.from_user.id)
+      if m.from_user.id in Config.feedback:
+         Config.feedback.remove(m.from_user.id)
       feedtext = m.message.reply_to_message
       button = [[InlineKeyboardButton("Reply", callback_data=f"reply+{m.from_user.id}")]]
       markup = InlineKeyboardMarkup(button)
