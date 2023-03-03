@@ -7,8 +7,8 @@ from translation import Translation
 from .commands import start 
 
 @feedback.on_callback_query()
-async def cb_handler(c, m):
-  cb_data = c.data
+async def cb_handler(c:client,m:CallbackQuery):
+  cb_data = m.data
 
   if "feed" in cb_data:
       Config.feedback.append(m.from_user.id)
