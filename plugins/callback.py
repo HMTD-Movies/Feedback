@@ -42,7 +42,7 @@ async def cb_handler(c: Client, m: CallbackQuery):
       markup = InlineKeyboardMarkup(button)
       for i in Config.OWNER:
           NS = await feedtext.forward(int(i))
-          await NS.reply_text("Send the reply", reply_markup=markup, quote=True)
+          await m.reply_text("Send the reply", reply_markup=markup, quote=True)
       await m.message.delete()
       await c.send_message(chat_id=m.message.chat.id, text="Feedback sent successfully. Hope you will get reply soon")
 
